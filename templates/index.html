@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Estude com o Gemini</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Estilos CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Cor de fundo do corpo da página */
+            margin: 0;
+            padding: 0;
+        }
+        .corpo {
+          min-height: 80vh;
+        }
+
+        header, footer {
+            background-color: #343a40; /* Cor de fundo dos cabeçalhos e rodapé */
+            color: #fff; /* Cor do texto dos cabeçalhos e rodapé */
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .pergunteGemini {
+            background-color: #c2c5c7; /* Cor de fundo do formulário */
+            text-align: left;
+            border-radius: 20px;
+            border: #343a40 2px solid; /* Cor e espessura da borda */
+            padding: 2em; /* Espaçamento interno do formulário */
+        }
+    </style>
+
+    <!-- Script JavaScript -->
+    <script>
+        function mostrarTextarea() {
+            // Função para mostrar ou ocultar o textarea dependendo da opção selecionada
+            var opcaoSelecionada = document.querySelector('input[name="opcao"]:checked').value;
+            var textarea = document.getElementById('duvida_texto');
+            var textareaLabel = document.getElementById('duvida_texto_label');
+            if (opcaoSelecionada === 'opcao4') {
+                textarea.style.display = 'block'; // Mostra o textarea
+                textareaLabel.style.display = 'block'; // Mostra o label do textarea
+            } else {
+                textarea.style.display = 'none'; // Oculta o textarea
+                textareaLabel.style.display = 'none'; // Oculta o label do textarea
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <!-- Cabeçalho da página -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Início</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>   
+    </header>
+        
+    <!-- Corpo da página -->
+    <div class="row mb-3 text-center corpo">
+        <div class="col-sm-2 themed-grid-col"></div>
+        <div class="col-sm-8 themed-grid-col">
+            <!-- Título -->
+            <h3>Professor Gemini</h3> <br>
+            
+            <!-- Formulário para enviar perguntas -->
+            <form action="/process" method="post" class="pergunteGemini" enctype="multipart/form-data" oninput="mostrarTextarea()">
+                <!-- Campo para upload de arquivo PDF -->
+                <label for="pdf_input"><h5>Insira um PDF para iniciarmos os estudos!</h5></label><br>
+                <input required type="file" id="pdf_input" name="file" accept=".pdf"><br><br>
+                
+                <!-- Opções -->
+                <label><h5>Escolha uma opção ou pergunte diretamente:</h5></label><br>
+                <label><input type="radio" name="opcao" value="opcao1"> Criar perguntas sobre o texto</label><br>
+                <label><input type="radio" name="opcao" value="opcao2"> Criar perguntas de múltipla escolha sobre o texto</label><br>
+                <label><input type="radio" name="opcao" value="opcao3"> Criar um resumo explicando o texto</label><br>
+                <label><input type="radio" name="opcao" value="opcao4"> Perguntar diretamente</label><br><br>
+                
+                <!-- Campo de texto para perguntas diretas -->
+                <label for="duvida_texto" id="duvida_texto_label"><h5>Qual a sua dúvida?</h5></label><br>
+                <textarea id="duvida_texto" name="texto" rows="4" cols="50" placeholder="Digite seu texto aqui"></textarea><br><br>
+                
+                <!-- Botão de envio -->
+                <button type="submit" value="Enviar" class="btn btn-dark">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>Criado utilizando API - Gemini</p>
+    </footer>
+</body>
+</html>

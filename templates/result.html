@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Estude com o Gemini</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Estilos CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .pergunteGemini {
+            background-color: #c2c5c7;
+            text-align: left;
+            border-radius: 20px;
+            border: #343a40 2px solid;
+            padding: 2em; 
+        }
+
+        .chat-bubble {
+            background-color: #dadada;
+            border-radius: 10px;
+            margin-left: 15%;
+            margin-right: 15%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: #343a40 solid 2px;
+            border-radius: 15px;
+        }
+
+        .chat-bot-response {
+            color: #000;
+        }
+
+        .chat-body {
+            min-height: 70vh;
+            text-align: center;
+        }
+
+        .conversaGemini input[type="text"] {
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px; /* Largura desejada */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Início</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>   
+    </header>
+    <section class="chat-body">
+        <h1>Professor Gemini</h1>
+        <div class="chat-bubble">
+            <!-- Aqui vai o conteúdo dinâmico -->
+            {{ resposta|safe }}
+
+            <!-- Formulário para envio de mensagens -->
+            <form action="/conversa" method="post" class="conversaGemini">
+                <textarea id="duvida_texto" name="texto" rows="3" cols="55" placeholder="Digite seu texto aqui"></textarea><br><br>
+                <button type="button" class="btn btn-dark" onclick="window.location.href='/'">Voltar</button>
+                <button type="submit" value="Enviar" class="btn btn-dark">Enviar</button>                 
+            </form>
+        </div>
+        <br>
+    </section>
+    <footer>
+        <p>Criado utilizando API - Gemini</p>
+    </footer>
+</body>
+</html>
