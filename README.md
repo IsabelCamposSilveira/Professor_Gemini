@@ -38,7 +38,11 @@ Este é um projeto que utiliza a API do Gemini para ajudar os usuários a estuda
 5. Começe a utilizar.
 
 ## Telas
+- Area inicial com as opções disponiveis
 ![image](https://github.com/IsabelCamposSilveira/Professor_Gemini/assets/107281625/9ca85cf9-2aa4-41a5-ba0b-016100cb17b1)
+
+- Area do chat, possibilidade de seguir a conversa sobre o PDF ou voltar e iniciar outra conversa
+![image](https://github.com/IsabelCamposSilveira/Professor_Gemini/assets/107281625/e7769812-266a-4868-b3b7-c21e1544df09)
 
 
 ## Contribuição
