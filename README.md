@@ -37,6 +37,10 @@ Este é um projeto que utiliza a API do Gemini para ajudar os usuários a estuda
 4. Acesse a aplicação em seu navegador, geralmente em `http://localhost:5000`
 5. Começe a utilizar.
 
+## Telas
+![image](https://github.com/IsabelCamposSilveira/Professor_Gemini/assets/107281625/9ca85cf9-2aa4-41a5-ba0b-016100cb17b1)
+
+
 ## Contribuição
 
 Contribuições são bem-vindas! Se você quiser melhorar este projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
